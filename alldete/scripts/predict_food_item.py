@@ -6,8 +6,8 @@ from PIL import Image
 from transformers import ViTForImageClassification, ViTImageProcessor
 import json  # 👈 added
 
-MODEL_PATH = "/content/alldete/models/food101_vit_base_patch16_224.pth"
-DATA_TRAIN_DIR = "/content/alldete/data/food-101/train"   # change if path is different
+MODEL_PATH = "/content/Allergen_detector/alldete/models/food101_vit_base_patch16_224.pth"
+DATA_TRAIN_DIR = "/content/Allergen_detector/alldete/data/food-101/train"   # change if path is different
 
 # Build class list from folder names
 class_names = sorted(os.listdir(DATA_TRAIN_DIR))
@@ -34,7 +34,7 @@ transform = transforms.Compose([
 ])
 
 # Load allergen data 👇
-with open("/content/alldete/allergens.json", "r") as f:
+with open("/content/Allergen_detector/alldete/allergens.json", "r") as f:
     allergen_data = json.load(f)
 
 def predict(image_path):
